@@ -44,4 +44,12 @@
         padding: 2vw;
         border-radius: 40vw;
     }
+
+    #app .notification_bar{
+        display: inline-block;
+        top: -14vw;
+        margin: 0px;
+        left: -18vw;
+        margin-left: 23vw;
+    }
 }
