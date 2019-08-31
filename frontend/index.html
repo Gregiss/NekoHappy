@@ -13,8 +13,18 @@
 <body>
     
     <div id="app">
+        <!-- Tuturial -->
+        <div class="tuto">
+                <div class="container">
+                    <div class="boxer tuto1">
+                        <p>Aqui é o menu rápido</p>
+                    </div>
+                </div>
+
+        </div>
+        <!-- End Tuturial -->
         <div class="container">
-            <div class="opa left"> 
+            <div class="opa left ativo_tuto"> 
                 <div class="links">
                     <a v-for="menuLinksLeft in menuLinksLeft" :class="menuLinksLeft.acessou ? 'active' : '' " @click="acessarLink(menuLinksLeft)">
                         <span :class="menuLinksLeft.acessou ? 'active' : '' "><i :class="menuLinksLeft.icon"></i></span>
@@ -89,5 +99,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./scripts/app.js"></script>
+    <script src="./scripts/pace.min.js"></script>
 </body>
 </html>

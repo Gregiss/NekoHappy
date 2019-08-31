@@ -64,4 +64,21 @@
         left: 0px;
         margin-left: 19vw;
     }
+
+    .tuto1{
+        position: fixed !important;
+        bottom: 40px !important;
+        top: 83% !important;
+        height: 70px !important;
+        left: 100px;
+    }
+
+    .tuto .boxer::after{
+        border: 10px solid transparent;
+      border-top-color: var(--green);
+      content: "";
+      left: 30px;
+      bottom: -20px;
+      position: absolute;
+    }
 }
