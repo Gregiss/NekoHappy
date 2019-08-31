@@ -1,17 +1,25 @@
 @media screen and (max-width: 1500px){
-    #app .links a{
-        font-size: 2vw;
-    }
-
     #app .links{
         left: 50px;
     }
 }
 
 @media screen and (max-width: 700px){
+
+    #app .links .name{
+        display: none;
+    }
+
+    #app .right{
+        display: none;
+    }
+
     #app .links a{
-        font-size: 6vw;
-        padding: 2vw;
+        font-size: 7vw;
+        margin-left: calc(2.5em);
+        display: inline-block;
+        left: -5vw;
+        bottom: 7vw;
     }
 
     #app .center {
@@ -26,11 +34,15 @@
     #app .left{
         width: 100%;
         position: fixed;
-        bottom: 10px;
+        bottom: 0px;
         display: block;
         overflow-x: hidden;
         height: auto;
         left: 0vw;
+        background: #253341;
+        height: 60px;
+        overflow: hidden;
+        padding: 3vw;
     }
 
     #app .links{
@@ -47,9 +59,9 @@
 
     #app .notification_bar{
         display: inline-block;
-        top: -14vw;
+        top: -21vw;
         margin: 0px;
-        left: -18vw;
-        margin-left: 23vw;
+        left: 0px;
+        margin-left: 19vw;
     }
 }

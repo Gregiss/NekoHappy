@@ -18,7 +18,7 @@
                 <div class="links">
                     <a v-for="menuLinksLeft in menuLinksLeft" :class="menuLinksLeft.acessou ? 'active' : '' " @click="acessarLink(menuLinksLeft)">
                         <span :class="menuLinksLeft.acessou ? 'active' : '' "><i :class="menuLinksLeft.icon"></i></span>
-                        {{ menuLinksLeft.name }}
+                        <span class="name">{{ menuLinksLeft.name }}</span>
                     </a>
                     <span class="notification_bar" :class="notification.count == 0 ? 'transparent' : '' " v-for="notification in notifications">
                         <p v-if="notification.count > 0 && notification.count < 50">{{ notification.count }}</p>
@@ -43,16 +43,46 @@
                     <h1>{{ user.name }}</h1>
                     <p>Olá usuarios da internet</p>
                 </div>
+                <div class="postagens">
+                    <div class="avatar" :style="{backgroundImage: 'url(' + user.avatar + ')'}"></div>
+                    <h1>{{ user.name }}</h1>
+                    <p>Olá usuarios da internet</p>
+                </div>
+                <div class="postagens">
+                    <div class="avatar" :style="{backgroundImage: 'url(' + user.avatar + ')'}"></div>
+                    <h1>{{ user.name }}</h1>
+                    <p>Olá usuarios da internet</p>
+                </div>
+                <div class="postagens">
+                    <div class="avatar" :style="{backgroundImage: 'url(' + user.avatar + ')'}"></div>
+                    <h1>{{ user.name }}</h1>
+                    <p>Olá usuarios da internet</p>
+                </div>
+                <div class="postagens">
+                    <div class="avatar" :style="{backgroundImage: 'url(' + user.avatar + ')'}"></div>
+                    <h1>{{ user.name }}</h1>
+                    <p>Olá usuarios da internet</p>
+                </div>
+                <div class="postagens">
+                    <div class="avatar" :style="{backgroundImage: 'url(' + user.avatar + ')'}"></div>
+                    <h1>{{ user.name }}</h1>
+                    <p>Olá usuarios da internet</p>
+                </div>
+                <div class="postagens">
+                    <div class="avatar" :style="{backgroundImage: 'url(' + user.avatar + ')'}"></div>
+                    <h1>{{ user.name }}</h1>
+                    <p>Olá usuarios da internet</p>
+                </div>
                 <!-- End Feed -->     
             </div>
              <!-- Explore -->
              <div class="opa center"  v-if="where.name == 'Explore'">
                  <h1>Explore</h1>
-                 <input type="text" placeholder="Search in NekoHappy">
+                 
              </div>
              <!-- End Explore -->
             <div class="opa right"> 
-
+                    <input type="text" placeholder="Search NekoHappy">
             </div>
         </div>
     </div>
