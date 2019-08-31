@@ -21,6 +21,7 @@ var app = new Vue({
             link.acessou = true
             this.where = link
             this.menuLinksLeft[index] = link
+            this.notifications[index].count = 0;
         }
     }
 });
