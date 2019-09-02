@@ -6,13 +6,15 @@ var app = new Vue({
          {"name" : "Profile", "icon" : "fas fa-user",  "acessou" : false}],
         where: {"name" : "Home", "icon" : "fas fa-home"},
         user: {"name": "Alexandre Silva", "avatar": "https://pbs.twimg.com/profile_images/1064957428343681024/B3-Vw14W_normal.jpg"},
+        oqueQuero: "",
         notifications : [
         {"name" : "Home", "count" : 10},
         {"name" : "Explore", "count" : 0},
-        {"name" : "Profile", "count" : 50}],
+        {"name" : "Profile", "count" : 50},
+        {"name" : "Novo", "count" : 50}
+    ],
         logged: false,
         games: [{"name" : "League Of Legends"}, {"name" : "Counter Strike Global Offensive"}, {"name" : "Outro"}],
-        oqueQuero: "",
         gameQueroA: "",
         outro: false,
         email: "",

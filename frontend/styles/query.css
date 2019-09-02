@@ -16,7 +16,7 @@
 
     #app .links a{
         font-size: 7vw;
-        margin-left: calc(2.5em);
+        margin-left: 1.5em;
         display: inline-block;
         left: -5vw;
         bottom: 7vw;
@@ -59,10 +59,10 @@
 
     #app .notification_bar{
         display: inline-block;
-        top: -21vw;
+        top: -22vw;
         margin: 0px;
         left: 0px;
-        margin-left: 19vw;
+        margin-left: 12vw;
     }
 
     .tuto1{
