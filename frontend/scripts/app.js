@@ -8,10 +8,10 @@ var app = new Vue({
         user: {"name": "Alexandre Silva", "avatar": "https://pbs.twimg.com/profile_images/1064957428343681024/B3-Vw14W_normal.jpg"},
         oqueQuero: "",
         notifications : [
-        {"name" : "Home", "count" : 10},
+        {"name" : "Home", "count" : 0},
         {"name" : "Explore", "count" : 0},
-        {"name" : "Profile", "count" : 50},
-        {"name" : "Novo", "count" : 50}
+        {"name" : "Profile", "count" : 0},
+        {"name" : "Novo", "count" : 0}
     ],
         logged: false,
         games: [{"name" : "League Of Legends"}, {"name" : "Counter Strike Global Offensive"}, {"name" : "Outro"}],
