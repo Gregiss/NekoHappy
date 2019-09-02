@@ -68,7 +68,7 @@
     .tuto1{
         position: fixed !important;
         bottom: 40px !important;
-        top: 83% !important;
+        top: 130vw !important;
         height: 70px !important;
         left: 100px;
     }
@@ -80,5 +80,31 @@
       left: 30px;
       bottom: -20px;
       position: absolute;
+    }
+
+    .main .form{
+        position: relative;
+        border-radius: 0px;
+        font-size: 14px !important;
+        top: -20px;
+    }
+
+    .main .form h1, h2{
+        font-size: 20px;
+    }
+
+    .main .form h2{
+        font-size: 18px;
+    }
+
+    .main .responder{
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        padding-bottom: 40px;
+        height: 280px;
+        top: 15em;
+        padding-bottom: 10vw;
+        overflow-y: scroll;
     }
 }

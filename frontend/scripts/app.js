@@ -9,8 +9,16 @@ var app = new Vue({
         notifications : [
         {"name" : "Home", "count" : 10},
         {"name" : "Explore", "count" : 0},
-        {"name" : "Profile", "count" : 50}    
-    ]
+        {"name" : "Profile", "count" : 50}],
+        logged: false,
+        games: [{"name" : "League Of Legends"}, {"name" : "Counter Strike Global Offensive"}, {"name" : "Outro"}],
+        oqueQuero: "",
+        gameQueroA: "",
+        outro: false,
+        email: "",
+        senha: "",
+        nome: "",
+        tuturial: 0
     },
     methods: {
         acessarLink(link){
@@ -22,6 +30,44 @@ var app = new Vue({
             this.where = link
             this.menuLinksLeft[index] = link
             this.notifications[index].count = 0;
+        },
+        oqueQueroA(oque){
+            this.oqueQuero = oque
+        },
+        qualGame(game){
+            this.gameQueroA = game
+            if(game.name == "Outro"){
+                this.outro = true
+                this.gameQueroA = ""
+            } else{
+                this.outro = false
+                this.gameQueroA = game.name
+            }
+        },
+        cadastrar(){
+            this.logged = true
+            this.user.name = this.nome
+            if(this.oqueQuero == 'ensinar'){
+                var novaArea = {"name" : "Ensinar", "icon" : "fas fa-chalkboard-teacher", "acessou" : false}
+                this.menuLinksLeft.push(novaArea)
+            } else if(this.oqueQuero == 'aprender'){
+                var novaArea = {"name" : "Aprender", "icon" : "fas fa-school", "acessou" : false}
+                this.menuLinksLeft.push(novaArea)
+            }
+        },
+        tuto(){
+            if(this.tuturial == 0){
+                this.tuturial = 1
+            } else if(this.tuturial == 1){
+                this.tuturial = 2;
+                for(var i = 0; i < this.menuLinksLeft.length; i++){
+                    this.menuLinksLeft[i].acessou = false
+                }
+                this.where = {"name" : "Explore", "icon" : "far fa-bookmark",  "acessou" : true}
+                this.menuLinksLeft[1] = {"name" : "Explore", "icon" : "far fa-bookmark",  "acessou" : true}
+            } else{
+                this.tuturial = 3
+            }
         }
     }
 });

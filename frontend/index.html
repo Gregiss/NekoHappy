@@ -13,18 +13,28 @@
 <body>
     
     <div id="app">
+        <div class="logged" v-if="logged" >
+        <div class="splash">
+            
+        </div>
         <!-- Tuturial -->
-        <div class="tuto">
+        <div class="tuto" @click="tuto" v-if="tuturial == 0 || tuturial == 1 || tuturial == 2">
                 <div class="container">
-                    <div class="boxer tuto1">
+                    <div class="boxer tuto1" v-if="tuturial == 0">
                         <p>Aqui é o menu rápido</p>
+                    </div>
+                    <div class="boxer tuto2" v-if="tuturial == 1">
+                        <p>Aqui é o Feed</p>
+                    </div>
+                    <div class="boxer tuto2" v-if="tuturial == 2">
+                        <p>Aqui é o Explore, onde você encontrar seus professores</p>
                     </div>
                 </div>
 
         </div>
         <!-- End Tuturial -->
         <div class="container">
-            <div class="opa left ativo_tuto"> 
+            <div class="opa left" :class="tuturial == 0 ? 'ativo_tuto' : ''"> 
                 <div class="links">
                     <a v-for="menuLinksLeft in menuLinksLeft" :class="menuLinksLeft.acessou ? 'active' : '' " @click="acessarLink(menuLinksLeft)">
                         <span :class="menuLinksLeft.acessou ? 'active' : '' "><i :class="menuLinksLeft.icon"></i></span>
@@ -37,7 +47,7 @@
                 </div>
             </div>
             <!-- Feed -->
-            <div class="opa center"  v-if="where.name == 'Home'">
+            <div class="opa center" :class="tuturial == 1 ? 'ativo_tuto' : ''"  v-if="where.name == 'Home'">
                 <h1>Home</h1>
                 <div class="post">
                     <div class="avatar" :style="{backgroundImage: 'url(' + user.avatar + ')'}"></div>
@@ -86,13 +96,43 @@
                 <!-- End Feed -->     
             </div>
              <!-- Explore -->
-             <div class="opa center"  v-if="where.name == 'Explore'">
+             <div class="opa center" :class="tuturial == 2 ? 'ativo_tuto' : ''"  v-if="where.name == 'Explore'">
                  <h1>Explore</h1>
                  
              </div>
              <!-- End Explore -->
             <div class="opa right"> 
                     <input type="text" placeholder="Search NekoHappy">
+            </div>
+        </div>
+        </div>
+        <div v-else="" class="main">
+            <div class="container">
+                <div class="form">
+                        <h1>Você já imaginou ensinar ou aprender a jogar um determinado jogo?</h1>
+                        <h2>Aqui no NekoHappy você pode se tornar um professor ou um aluno!</h2>
+                </div>
+                <div class="responder">
+                    <h1>Cadastra-se</h1>
+                    <input v-model="email" type="text" placeholder="E-mail">
+                    <input type="password" v-model="senha" type="text" placeholder="Senha">
+                    <input v-model="nome" type="text" placeholder="Nome">
+                    <div v-if="!email == '' && !senha == '' && !nome == ''">
+                    <p>Você quer ensinar ou aprender?</p>
+                    <button @click="oqueQueroA('ensinar')">Ensinar</button>
+                    <button  @click="oqueQueroA('aprender')">Aprender</button>
+                    <div v-if="!oqueQuero == ''">
+                    <p>Qual jogo você quer {{ oqueQuero }} ?</p>
+                    <button v-for="game in games" @click="qualGame(game)">{{ game.name }}</button>
+                    <p v-if="!gameQueroA == ''">Você selecionou o jogo {{ gameQueroA  }} </p>
+                    <input v-model="gameQueroA" type="text" placeholder="Qual jogo?" v-if="outro">
+                    <br>
+                    <div>
+                        <button v-if="!gameQueroA == ''" @click="cadastrar">Cadastrar</button>
+                    </div>
+                     </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
