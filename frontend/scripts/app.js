@@ -33,7 +33,7 @@ var app = new Vue({
             this.where = link
             this.menuLinksLeft[index] = link
             this.notifications[index].count = 0
-            document.title = "NekoHappy - " + link.name
+            document.title = "NekoHappy - " + this.where.name
         },
         oqueQueroA(oque) {
             this.oqueQuero = oque
@@ -60,9 +60,11 @@ var app = new Vue({
                 this.menuLinksLeft.push(novaArea)
                 this.scrollToTop()
             }
+            document.title = "NekoHappy - " + this.where.name
         },
         tuto() {
             this.scrollToTop()
+            document.title = "NekoHappy - " + this.where.name
             if (this.tuturial == 0) {
                 this.tuturial = 1
             } else if (this.tuturial == 1) {
