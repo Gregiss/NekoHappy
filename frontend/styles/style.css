@@ -522,7 +522,7 @@ h1 {
     z-index: 10000000000;
     -webkit-animation: splash 4s linear alternate;
     opacity: 0;
-    z-index: -1;
+    z-index: -100;
 }
 
 .tuto2 {
