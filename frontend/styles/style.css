@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
 }
@@ -6,17 +6,16 @@
 .pace {
     -webkit-pointer-events: none;
     pointer-events: none;
-  
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-  }
-  
-  .pace-inactive {
+}
+
+.pace-inactive {
     display: none;
-  }
-  
-  .pace .pace-progress {
+}
+
+.pace .pace-progress {
     background: var(--green);
     position: fixed;
     z-index: 2000;
@@ -24,10 +23,89 @@
     right: 100%;
     width: 100%;
     height: 4px;
-  }
-  
+}
 
-a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
     font: inherit;
     font-size: 100%;
     vertical-align: baseline;
@@ -40,27 +118,30 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 ::-webkit-scrollbar {
     width: 12px!important;
     height: 6px!important;
 }
+
 ::-webkit-scrollbar-thumb {
-    background-color: var(--green   );
+    background-color: var(--green);
     border-radius: 40px;
 }
+
 ::-webkit-scrollbar-track {
-    background: hsla(0,0%,100%,.08);
+    background: hsla(0, 0%, 100%, .08);
 }
 
-:root{
+:root {
     --green: #17bf63;
     --body: rgb(21, 32, 43);
 }
 
-body,html{
+body,
+html {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif !important;
     color: #4b4b4b;
     text-rendering: optimizeLegibility;
@@ -75,17 +156,17 @@ body,html{
     background-color: var(--body);
 }
 
-.container{
+.container {
     max-width: 1240px;
     height: auto;
     position: relative;
 }
 
-#app .opa{
+#app .opa {
     display: inline-block;
 }
 
-#app .left{
+#app .left {
     width: 23%;
     background: transparent;
     height: auto;
@@ -93,15 +174,14 @@ body,html{
     z-index: 1000;
 }
 
-#app .center{
+#app .center {
     width: 48%;
     background: transparent;
     position: absolute;
     padding-bottom: 200px;
 }
 
-
-#app .right{
+#app .right {
     width: 25%;
     background: transparent;
     height: auto;
@@ -109,23 +189,23 @@ body,html{
     left: 49%;
 }
 
-#app .right input{
+#app .right input {
     margin: 40px 10px 0px;
 }
 
-#app .links i{
+#app .links i {
     color: #fff;
 }
 
-#app .links{
+#app .links {
     position: fixed;
 }
 
-.active i{
+.active i {
     color: var(--green) !important;
 }
 
-#app .links a{
+#app .links a {
     color: #fff;
     display: block;
     position: relative;
@@ -138,20 +218,19 @@ body,html{
     font-weight: bold;
 }
 
-
-#app .links a:hover{
+#app .links a:hover {
     background: #17bf6336;
 }
 
-#app .active{
+#app .active {
     color: var(--green) !important;
 }
 
-#app .links i{
+#app .links i {
     padding: 0.4vw;
 }
 
-#app .post{
+#app .post {
     width: 100%;
     height: 80px;
     background: rgb(17, 26, 34);
@@ -160,7 +239,7 @@ body,html{
     border-radius: 10px;
 }
 
-#app .post textarea{
+#app .post textarea {
     position: relative;
     background: transparent;
     width: 100%;
@@ -176,22 +255,22 @@ body,html{
     padding-top: 34px;
 }
 
-.center{
+.center {
     color: #fff;
 }
 
-.center h1{
+.center h1 {
     padding: 20px;
     font-size: 27px;
     font-weight: bold;
 }
 
-i{
+i {
     color: var(--green);
     cursor: pointer;
 }
 
-#app .post .bottom{
+#app .post .bottom {
     position: relative;
     bottom: 0px;
     background: rgb(17, 26, 34);
@@ -202,12 +281,12 @@ i{
     border-radius: 10px;
 }
 
-#app .post .bottom i{
+#app .post .bottom i {
     margin-left: 10px;
     font-size: 22px;
 }
 
-#app .avatar{
+#app .avatar {
     width: 40px;
     height: 40px;
     background-size: cover;
@@ -217,7 +296,7 @@ i{
     border-radius: 50%;
 }
 
-#app .center .postagens{
+#app .center .postagens {
     width: 100%;
     height: auto;
     background: rgb(17, 26, 34);
@@ -228,22 +307,22 @@ i{
     margin-top: 10px;
 }
 
-#app .center .postagens h1{
+#app .center .postagens h1 {
     position: relative;
     left: 60px;
     font-size: 19px;
     top: 5px;
 }
 
-#app .center .postagens p{
+#app .center .postagens p {
     padding: 20px;
     font-size: 16px;
 }
 
-#app input{
+#app input {
     width: 100%;
     padding: 12px;
-    background: rgba(0,0,0,.40);
+    background: rgba(0, 0, 0, .40);
     border: none;
     outline: none;
     border-radius: 20px;
@@ -251,15 +330,15 @@ i{
     font-size: 16px;
 }
 
-#app .center input{
+#app .center input {
     width: 50%;
 }
 
-#app input::placeholder{
+#app input::placeholder {
     color: #fff;
 }
 
-#app .notification_bar{
+#app .notification_bar {
     color: #fff;
     font-size: 15px;
     position: relative;
@@ -274,15 +353,15 @@ i{
     background: var(--green);
 }
 
-#app .notification_bar p{
+#app .notification_bar p {
     padding: 0px;
 }
 
-#app .transparent{
+#app .transparent {
     background: transparent;
 }
 
-input{
+input {
     -webkit-writing-mode: horizontal-tb !important;
     text-rendering: auto;
     color: initial;
@@ -308,60 +387,60 @@ input{
     border: 1px solid transparent !important;
 }
 
-input:focus{
+input:focus {
     border: 1px solid var(--green) !important;
 }
 
-.fixed{
+.fixed {
     position: fixed;
 }
 
-.tuto{
+.tuto {
     position: fixed;
     top: 0px;
     width: 100%;
     height: 100%;
     z-index: 2000;
-    background: rgba(0,0,0,.70);
+    background: rgba(0, 0, 0, .40);
 }
 
-.tuto .boxer{
+.tuto .boxer {
     position: relative;
     width: 150px;
     height: auto;
     background: #279057;
-    box-shadow: 2px 1px 3px rgba(0,0,0,.70);
+    box-shadow: 2px 1px 3px rgba(0, 0, 0, .70);
     padding: 10px;
     border: 2px solid var(--green);
     color: #fff;
-    z-index: 4000;
+    z-index: 14000 !important;
     border-radius: 5px;
 }
 
-.tuto .boxer::after{
+.tuto .boxer::after {
     border: 10px solid transparent;
-  border-right-color: var(--green);
-  content: "";
-  left: -20px;
-  bottom: 20px;
-  position: absolute;
+    border-right-color: var(--green);
+    content: "";
+    left: -20px;
+    bottom: 20px;
+    position: absolute;
 }
 
-.tuto1{
+.tuto1 {
     top: 90px;
     left: 180px;
 }
 
-.ativo_tuto{
+.ativo_tuto {
     position: relative;
     z-index: 2100 !important;
 }
 
-.main h1{
+.main h1 {
     font-size: 32px;
 }
 
-.main{
+.main {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -369,27 +448,30 @@ input:focus{
     color: #fff;
 }
 
-.main::after{
+.main::after {
     content: '';
     width: 100%;
     height: 100%;
     position: fixed;
-    background: rgba(0,0,0,.70);
+    background: rgba(0, 0, 0, .70);
     top: 0px;
     left: 0px;
 }
 
-.main button,a, h1, h2{
+.main button,
+a,
+h1,
+h2 {
     position: relative;
     z-index: 500;
     padding: 10px;
 }
 
-.main h2{
+.main h2 {
     font-size: 28px;
 }
 
-.form{
+.form {
     position: relative;
     left: 0px;
     background: rgb(17, 26, 34);
@@ -397,11 +479,11 @@ input:focus{
     padding: 60px;
     top: -50px;
     border-radius: 40px;
-    z-index : 200;
-    box-shadow: 3px 2px 1px rgba(0,0,0,.40);
+    z-index: 200;
+    box-shadow: 3px 2px 1px rgba(0, 0, 0, .40);
 }
 
-.main .responder{
+.main .responder {
     width: 50%;
     position: absolute;
     top: 100%;
@@ -409,27 +491,28 @@ input:focus{
     background: rgb(17, 26, 34);
     height: auto;
     z-index: 200;
-    box-shadow: 3px 2px 1px rgba(0,0,0,.40);
+    box-shadow: 3px 2px 1px rgba(0, 0, 0, .40);
     border-radius: 4px;
     padding: 40px;
 }
 
-.main .responder p, h1{
+.main .responder p,
+h1 {
     padding: 10px;
 }
 
-.main .responder input{
+.main .responder input {
     width: 100% !important;
     margin-top: 20px;
 }
 
-.main .responder button{
+.main .responder button {
     margin-left: 10px;
     margin-top: 10px;
     cursor: pointer;
 }
 
-.splash{
+.splash {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -442,14 +525,15 @@ input:focus{
     z-index: -1;
 }
 
-.tuto2{
-    left: 49vw;
-    top: 5vw;
+.tuto2 {
+    right: 10vw;
+    top: 1vw;
     position: relative;
     z-index: 5000 !important;
+    float: right;
 }
 
-.tuto2::after{
+.tuto2::after {
     border: 10px solid transparent;
     border-top-color: var(--green);
     content: "";
@@ -460,24 +544,33 @@ input:focus{
 
 @-webkit-keyframes splash {
     0% {
-        -webkit-transform:rotate(0deg) scale(0.4);
+        -webkit-transform: scale(0.4);
         opacity: 1;
         z-index: 10000;
         display: block;
     }
     50% {
         background: #17bf63;
-        -webkit-transform:rotate(180deg) scale(3);
+        -webkit-transform: scale(3);
     }
     70% {
         background: #253341;
-        -webkit-transform:rotate(360deg) scale(5);
+        -webkit-transform: scale(5);
     }
     100% {
         background: #279057;
-        -webkit-transform:rotate(360deg) scale(9);
+        -webkit-transform: scale(9);
         opacity: 0;
         z-index: -1;
         display: none;
     }
+}
+
+.logged,
+.main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
