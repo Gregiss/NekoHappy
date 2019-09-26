@@ -44,8 +44,8 @@
                 </div>
             </div>
             <!-- Feed -->
-            <div class="opa center" v-if="where.name == 'Home'">
-                <h1>Home</h1>
+            <div class="opa center" v-if="where.name == menuLinksLeft[0].name">
+                <h1>{{menuLinksLeft[0].name}}</h1>
                 <div class="post">
                     <div class="avatar" :style="{backgroundImage: 'url(' + user.avatar + ')'}"></div>
                     <textarea name="" placeholder="Whats happening?"></textarea>
@@ -93,16 +93,15 @@
                 <!-- End Feed -->     
             </div>
              <!-- Explore -->
-             <div class="opa center" :class="tuturial == 2 ? 'ativo_tuto' : ''"  v-if="where.name == 'Explore'">
-                 <h1>Explore</h1>
+             <div class="opa center" :class="tuturial == 2 ? 'ativo_tuto' : ''"  v-if="where.name == menuLinksLeft[1].name">
+                 <h1>{{ menuLinksLeft[1].name }} </h1>
                  
              </div>
 
             <!-- comment --> 
 
-            <div class="opa center" :class="tuturial == 2 ? 'ativo_tuto' : ''"  v-if="where.name == 'Profile'">
+            <div class="opa center" :class="tuturial == 2 ? 'ativo_tuto' : ''"  v-if="where.name == menuLinksLeft[3].name">
                  <h1>{{ user.name }} </h1>
-                 
              </div>
 
              <!-- End Explore -->
