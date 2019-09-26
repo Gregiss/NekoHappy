@@ -13,7 +13,7 @@
 <body>
     
     <div id="app">
-        <div class="logged" v-if="logged" >
+        <div class="logged" v-if="logged" > 
         <!-- Tuturial -->
         <div class="tuto" @click="tuto" v-if="tuturial == 0 || tuturial == 1 || tuturial == 2">
                 <div class="container">
@@ -97,6 +97,14 @@
                  <h1>Explore</h1>
                  
              </div>
+
+            <!-- comment --> 
+
+            <div class="opa center" :class="tuturial == 2 ? 'ativo_tuto' : ''"  v-if="where.name == 'Profile'">
+                 <h1>{{ user.name }} </h1>
+                 
+             </div>
+
              <!-- End Explore -->
             <div class="opa right"> 
                     <input type="text" placeholder="Search NekoHappy">
