@@ -32,7 +32,8 @@ var app = new Vue({
             link.acessou = true
             this.where = link
             this.menuLinksLeft[index] = link
-            this.notifications[index].count = 0;
+            this.notifications[index].count = 0
+            document.title = "NekoHappy - " + link.name
         },
         oqueQueroA(oque) {
             this.oqueQuero = oque
