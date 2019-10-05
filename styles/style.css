@@ -518,7 +518,7 @@ button:focus{
 }
 
 .main .cr{
-    width: 50% !important;
+    width: 60% !important;
     float: right !important;
     right: 0% !important;
     top: 0% !important;
@@ -599,9 +599,9 @@ button:focus{
     position: fixed;
     top: 0%;
     float: right;
-    right: 0%;
+    right: 200px;
     background: transparent;
-    width: 100%;
+    width: 90%;
     height: 80px;
 }
 
@@ -640,7 +640,7 @@ button:focus{
     position: relative;
     width: 100%;
     right: 0px;
-    left: 20%;
+    left: 179px;
 }
 
 .main .cr .top input::placeholder{
@@ -743,7 +743,7 @@ button:focus{
 .cl .question{
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%);
     z-index: 100000;
     color: #fff !important;
