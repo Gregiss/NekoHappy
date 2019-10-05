@@ -1,0 +1,168 @@
+@media screen and (max-width: 1500px){
+    #app .links{
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 700px){
+
+    #app .links .name{
+        display: none;
+    }
+
+    #app .right{
+        display: none;
+    }
+
+    #app .links a{
+        font-size: 7vw;
+        margin-left: 1.5em;
+        display: inline-block;
+        left: -5vw;
+        bottom: 7vw;
+    }
+
+    #app .center {
+        width: 100%;
+        left: 0px;
+    }
+
+    #app .left{
+        display: none;
+    }
+
+    #app .left{
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        display: block;
+        overflow-x: hidden;
+        height: auto;
+        left: 0vw;
+        background: #253341;
+        height: 60px;
+        overflow: hidden;
+        padding: 3vw;
+    }
+
+    #app .links{
+        position: relative;
+        left: 0px;
+    }
+
+    #app .left a{
+        display: inline-block;
+        width: auto;
+        padding: 2vw;
+        border-radius: 40vw;
+    }
+
+    #app .notification_bar{
+        display: inline-block;
+        top: -22vw;
+        margin: 0px;
+        left: 0px;
+        margin-left: 12vw;
+    }
+
+    .tuto1{
+        position: fixed !important;
+        bottom: 40px !important;
+        top: 130vw !important;
+        height: 70px !important;
+        left: 100px;
+    }
+
+    .tuto .boxer::after{
+        border: 10px solid transparent;
+      border-top-color: var(--green);
+      content: "";
+      left: 30px;
+      bottom: -20px;
+      position: absolute;
+    }
+
+    .cl{
+        display: none;
+    }
+
+    /* ok */
+    
+    .main .cr{
+        width: 100% !important;
+    }
+
+    .opata .centralizar h1 {
+        color: #151515 !important;
+        font-size: 22px;
+        text-align: center;
+        font-weight: bold;
+        width: 100%;
+        position: relative;
+        left: -29%;
+    }
+
+    .back {
+        position: fixed;
+        top: 24%;
+        z-index: 10000;
+        height: 50px;
+        width: 50px;
+        background: var(--green) !important;
+        color: #000;
+        border-radius: 50%;
+        margin-left: 24px;
+    }
+
+    .center_button {
+        width: 79vw;
+        display: block;
+        font-size: 18px;
+    }
+
+    .main .cr .top button {
+        right: 0px;
+        top: 20px;
+        position: relative;
+        padding: 14px !important;
+    }
+
+    .main .cr .top input {
+        display: inline-block !important;
+        width: 165px !important;
+        padding: 4px;
+        margin: 0;
+        outline: 0;
+        background-color: #fff !important;
+        border: 1px solid #e6ecf0 !important;
+        border-radius: 3px !important;
+        color: rgba(0,0,0,.40) !important;
+        -webkit-writing-mode: horizontal-tb !important;
+        text-rendering: auto;
+        color: initial;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        -webkit-appearance: textfield;
+        background-color: white;
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+        margin: 0.4em;
+        font: 400 13.3333px Arial;
+        padding: 1px 0px;
+        border-width: 2px;
+        border-style: inset;
+        border-color: initial;
+        border-image: initial;
+        top: 20px;
+        position: relative;
+        width: 100%;
+        right: 0px;
+        left: 2%;
+    }
+
+}
