@@ -13,9 +13,23 @@
 <body>
     
     <div id="app">
-        <div class="logged" v-if="logged" > 
+        <div class="logged" v-if="logged" >
+        <div class="splash">
+            
+        </div>
+        <div class="tuto" v-if="!querFazerTuturial && !decisaoTuturial">
+                <div class="deseja">
+                        Deseja fazer o tuturial?
+                        <br>
+                        <br>
+                        <br>
+                        <button @click="descisaoTuto('sim')">Sim</button>
+                        <button @click="descisaoTuto('nao')">Não</button>
+                </div>
+        </div>
         <!-- Tuturial -->
-        <div class="tuto" @click="tuto" v-if="tuturial == 0 || tuturial == 1 || tuturial == 2">
+        <div class="tuto" @click="tuto" v-if="querFazerTuturial && tuturial == 0 || tuturial == 1 || tuturial == 2">
+            
                 <div class="container">
                     <div class="boxer tuto1" v-if="tuturial == 0">
                         <p>Aqui é o menu rápido</p>
@@ -31,7 +45,7 @@
         </div>
         <!-- End Tuturial -->
         <div class="container">
-            <div class="opa left" :class="tuturial == 0 ? 'ativo_tuto' : ''"> 
+            <div class="opa left" :class="tuturial == 0 && querFazerTuturial ? 'ativo_tuto' : ''"> 
                 <div class="links">
                     <a v-for="menuLinksLeft in menuLinksLeft" :class="menuLinksLeft.acessou ? 'active' : '' " @click="acessarLink(menuLinksLeft)">
                         <span :class="menuLinksLeft.acessou ? 'active' : '' "><i :class="menuLinksLeft.icon"></i></span>
@@ -43,18 +57,9 @@
                     </span>
                 </div>
             </div>
-
-            <!-- Escolher photos  -->
-            <div class="tuto escolhe_foto">
-                <div class="box_a">
-                    <h1>Change a photo</h1>
-                </div>
-            </div>
-            <!-- End Escolher photos  -->
-
             <!-- Feed -->
-            <div class="opa center" v-if="where.name == menuLinksLeft[0].name">
-                <h1>{{menuLinksLeft[0].name}}</h1>
+            <div class="opa center" :class="tuturial == 1 && querFazerTuturial ? 'ativo_tuto' : ''"  v-if="where.name == 'Home'">
+                <h1>Home</h1>
                 <div class="post">
                     <div class="avatar" :style="{backgroundImage: 'url(' + user.avatar + ')'}"></div>
                     <textarea name="" placeholder="Whats happening?"></textarea>
@@ -102,17 +107,10 @@
                 <!-- End Feed -->     
             </div>
              <!-- Explore -->
-             <div class="opa center" :class="tuturial == 2 ? 'ativo_tuto' : ''"  v-if="where.name == menuLinksLeft[1].name">
-                 <h1>{{ menuLinksLeft[1].name }} </h1>
+             <div class="opa center" :class="tuturial == 2 && querFazerTuturial ? 'ativo_tuto' : ''"  v-if="where.name == 'Explore'">
+                 <h1>Explore</h1>
                  
              </div>
-
-            <!-- comment --> 
-
-            <div class="opa center" :class="tuturial == 2 ? 'ativo_tuto' : ''"  v-if="where.name == menuLinksLeft[2].name">
-                 <h1>{{ user.name }} </h1>
-             </div>
-
              <!-- End Explore -->
             <div class="opa right"> 
                     <input type="text" placeholder="Search NekoHappy">
@@ -121,37 +119,95 @@
         </div>
         <div v-else="" class="main">
             <div class="container">
-                <div class="form">
-                        <h1>Você já imaginou ensinar ou aprender a jogar um determinado jogo?</h1>
-                        <h2>Aqui no NekoHappy você pode se tornar um professor ou um aluno!</h2>
-                </div>
-                <div class="responder">
-                    <h1>Cadastra-se</h1>
-                    <input v-model="email" type="text" placeholder="E-mail">
-                    <input type="password" v-model="senha" type="text" placeholder="Senha">
-                    <input v-model="nome" type="text" placeholder="Nome">
-                    <div v-if="!email == '' && !senha == '' && !nome == ''">
-                    <p>Você quer ensinar ou aprender?</p>
-                    <button @click="oqueQueroA('ensinar')">Ensinar</button>
-                    <button  @click="oqueQueroA('aprender')">Aprender</button>
-                    <div v-if="!oqueQuero == ''">
-                    <p>Qual jogo você quer {{ oqueQuero }} ?</p>
-                    <button v-for="game in games" @click="qualGame(game)">{{ game.name }}</button>
-                    <p v-if="!gameQueroA == ''">Você selecionou o jogo {{ gameQueroA  }} </p>
-                    <input v-model="gameQueroA" type="text" placeholder="Qual jogo?" v-if="outro">
-                    <br>
-                    <div>
-                        <button v-if="!gameQueroA == ''" @click="cadastrar">Cadastrar</button>
-                    </div>
-                     </div>
-                    </div>
+                <div class="cl">
+                        <div class="question">
+                            <h1 style="font-size: 28px; padding: 30px;">Aqui no NekoHappy você pode ensinar ou aprender a jogar um determinando jogo</h1>
+                            <a> <i class="fas fa-chalkboard-teacher"></i>   Ensine um player a jogar</a>
+                            <a> <i class="fas fa-school"></i>   Aprenda a jogar</a>
+                        </div>
+                        <div class="background">
+                </div></div>
+                <div class="cr">
+                        <div class="responder formta opata" v-if="cadastrare">
+                                <div class="top">
+                                        <input type="text" placeholder="E-mail">
+                                        <input type="text" placeholder="Password">
+                                        <button>Login</button>
+                                </div>
+                                <div class="centralizar">
+                                <h1>Cadastra-se</h1>
+                                <input v-model="email" type="text" placeholder="E-mail">
+                                <input type="password" v-model="senha" type="text" placeholder="Senha">
+                                <input v-model="nome" type="text" placeholder="Nome">
+                                <div v-if="!email == '' && !senha == '' && !nome == ''">
+                                <p>Você quer ensinar ou aprender?</p>
+                                <button @click="oqueQueroA('ensinar')">Ensinar</button>
+                                <button  @click="oqueQueroA('aprender')">Aprender</button>
+                                <div v-if="!oqueQuero == ''">
+                                <p>Qual jogo você quer {{ oqueQuero }} ?</p>
+                                <button v-for="game in games" @click="qualGame(game)">{{ game.name }}</button>
+                                <p v-if="!gameQueroA == ''">Você selecionou o jogo {{ gameQueroA  }} </p>
+                                <input v-model="gameQueroA" type="text" placeholder="Qual jogo?" v-if="outro">
+                                <br>
+                                <div>
+                                    <button v-if="!gameQueroA == ''" @click="cadastrar">Cadastrar</button>
+                                </div>
+                                 </div>
+                                </div>
+                                </div>
+                            </div>
+                             <div class="responder formta opata" v-if="cadastrare">
+                                <div class="top">
+                                        <input type="text" placeholder="E-mail">
+                                        <input type="text" placeholder="Password">
+                                        <button>Login</button>
+                                </div>
+                                <div class="centralizar">
+                                <h1>Cadastra-se</h1>
+                                <input v-model="email" type="text" placeholder="E-mail">
+                                <input type="password" v-model="senha" type="text" placeholder="Senha">
+                                <input v-model="nome" type="text" placeholder="Nome">
+                                <div v-if="!email == '' && !senha == '' && !nome == ''">
+                                <p>Você quer ensinar ou aprender?</p>
+                                <button @click="oqueQueroA('ensinar')">Ensinar</button>
+                                <button  @click="oqueQueroA('aprender')">Aprender</button>
+                                <div v-if="!oqueQuero == ''">
+                                <p>Qual jogo você quer {{ oqueQuero }} ?</p>
+                                <button v-for="game in games" @click="qualGame(game)">{{ game.name }}</button>
+                                <p v-if="!gameQueroA == ''">Você selecionou o jogo {{ gameQueroA  }} </p>
+                                <input v-model="gameQueroA" type="text" placeholder="Qual jogo?" v-if="outro">
+                                <br>
+                                <div>
+                                    <button v-if="!gameQueroA == ''" @click="cadastrar">Cadastrar</button>
+                                </div>
+                                 </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="back" v-if="cadastrare" @click="backHome">
+                                    <i class="fas fa-arrow-left"></i>
+                            </div>
+                            <div class="responder formta" v-if="!login && !cadastrare">
+                                    <div class="top">
+                                            <input type="text" placeholder="E-mail">
+                                            <input type="text" placeholder="Password">
+                                            <button>Login</button>
+                                    </div>
+                                <div class="centralizar">
+                                <h1>Aprenda a jogar com seus professores, ou ensine alguém a jogar :D </h1>
+                                <button class="center_button" @click="buttonHome">Cadastrar</button>
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>
+
+        <div class="bottom"></div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./scripts/app.js"></script>
-    <script src="./scripts/pace.js"></script>
+    <script src="./scripts/pace.min.js"></script>
 </body>
 </html>
